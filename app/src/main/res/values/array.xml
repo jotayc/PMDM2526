@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="provincias">
+        <item>Granada</item>
+        <item>Cadiz</item>
+        <item>Málaga</item>
+        <item>Jaen</item>
+        <item>Almeria</item>
+        <item>Cordoba</item>
+        <item>Huelva</item>
+        <item>Sevilla</item>
+    </string-array>
+</resources>
