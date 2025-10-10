@@ -26,11 +26,12 @@ import org.w3c.dom.Text;
  *  5- Ciclo de vida de las actividades
  *
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     //Todo 2: Declaración de objetos
     private Button btn_show;
+    private Button btn_hide;
     private TextView txt_view;
 
     //Todo 1: OnCreate como primera función para inicializar elementos de la actividad
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Todo 4: Inicialización de variables
         this.btn_show = (Button) findViewById(R.id.btn_show);
+        this.btn_hide = (Button) findViewById(R.id.btnHide);
         this.txt_view = (TextView) findViewById(R.id.txt_view);
 
         //Todo 5. Los botones tienen un listener según el tipo de toque sobre la vista.
@@ -51,13 +53,8 @@ public class MainActivity extends AppCompatActivity {
         //Todo -> Desde Java 8 se sustituyen las clases anonimas por lambdas
 
 
-        this.btn_show.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                txt_view.setText("Hola 2DAM");
-            }
-        });
+        this.btn_show.setOnClickListener(this);
+        this.btn_hide.setOnClickListener(this);
 
         this.btn_show.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -95,5 +92,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    //Sobrecarga del método de la interfaz OnClickListener
+    @Override
+    public void onClick(View view) {
+        Button btn = (Button) view;
+
+        switch (btn.getId()){
+            case R.id.btn_show:
+                this.btn_show.setText("Un saludo");
+                break;
+            case R.id.btnHide:
+                this.btn_show.setText("Adios");
+                break;
+
+        }
     }
 }
