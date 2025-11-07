@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/act_light_blue"
+        android:icon="@drawable/fill_light_blue"
+        android:title="Celeste"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/act_purple"
+        android:icon="@drawable/fill_purple"
+        android:title="Morado"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/act_yellow"
+        android:icon="@drawable/fill_yellow"
+        android:title="Amarillo"
+        app:showAsAction="ifRoom|withText" />
+</menu>
